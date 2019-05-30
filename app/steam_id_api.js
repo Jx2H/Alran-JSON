@@ -45,7 +45,7 @@ module.exports = function(app, request) {
         request.get(url2, function(error, response, body) {
             if (body.indexOf('personaname') == -1) return ob.error = true, ob.text = '결과가 없는 플레이어 이거나 Web Api Key가 잘못되었습니다.', res.json(ob);
             var set3 = (JSON.parse(body));
-            var respe = set3.response;
+            var respe = set3.response.players[0];
             if (error) return ob.error = true, ob.text = '스팀 API 서버 응답이 없습니다.', res.json(ob);
             ob.steamapi = respe;
             save1();
