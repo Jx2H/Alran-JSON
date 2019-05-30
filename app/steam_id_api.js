@@ -1,4 +1,4 @@
-module.exports = function(client, app, request) {
+module.exports = function(app, request) {
     app.get('/api/steamid', function(req, res) {
         var st_api_key = req.query.apikey;
         var input = req.query.input;
