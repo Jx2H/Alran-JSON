@@ -6,7 +6,7 @@ module.exports = function(app, request) {
         let ob = new Object();
         ob.error = false;
 
-        if (!st_api_key && !input || st_api_key == '' || input  == '') return ob.error = true, ob.text = '필수 파라미터 값이 없습니다.', res.json(ob);
+        if (!st_api_key || !input || st_api_key == '' || input  == '') return ob.error = true, ob.text = '필수 파라미터 값이 없습니다.', res.json(ob);
 
         var set2;
         (function convert() { // 변환
