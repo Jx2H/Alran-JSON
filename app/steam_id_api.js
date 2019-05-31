@@ -58,7 +58,7 @@ module.exports = function(app, request) {
                 let log = body.indexOf(set2);
                 if (log == -1) { //중복시 메세지 변경
                     bansinfo = "이 유저는 바른각 연합밴 대상자가 아닙니다", ban = false;
-                } else if (log > 0 && body !== null) {
+                } else if (log > 0 && body != null) {
                     bansinfo = "이 유저는 바른각 연합밴 대상자입니다!", ban = true;
                 }
                 ob.barengakbans = {var: bansinfo_ver, match: ban, text: bansinfo};
