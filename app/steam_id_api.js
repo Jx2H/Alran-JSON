@@ -61,7 +61,7 @@ module.exports = function(app, request) {
                 } else if (log > 0 && body != null) {
                     bansinfo = "이 유저는 바른각 연합밴 대상자입니다!", ban = true;
                 }
-                ob.barengakbans = {var: bansinfo_ver, match: ban, text: bansinfo};
+                ob.barengakbans = {var: String(bansinfo_ver), match: ban, text: bansinfo};
                 end();
             });
         }
