@@ -43,10 +43,10 @@ module.exports = function(app, request) {
         var bansinfo, bansinfo_ver, ban;
         var url2 = ("http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key="+st_api_key+"&steamids="+set2);
         request.get(url2, function(error, response, body) {
+            if (error) return ob.error = true, ob.text = '스팀 API 서버 응답이 없습니다.', res.json(ob);
             if (body.indexOf('personaname') == -1) return ob.error = true, ob.text = '결과가 없는 플레이어 이거나 Web Api Key가 잘못되었습니다.', res.json(ob);
             var set3 = (JSON.parse(body));
             var respe = set3.response.players[0];
-            if (error) return ob.error = true, ob.text = '스팀 API 서버 응답이 없습니다.', res.json(ob);
             ob.steamapi = respe;
             save1();
         });
